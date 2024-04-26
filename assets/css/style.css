@@ -1,0 +1,145 @@
+.conteudo {
+    width: 1920px;
+    height: 1080px;
+    position: fixed;
+    left: calc(50% - 1920px / 2);
+    top: calc(50% - 1080px / 2);
+    margin: auto;
+    padding: 5px;
+}
+
+.intro-frases-encaixa {
+    background-color: #F2E49B !important;
+    font-size: 23px;
+    color: #025940;
+}
+
+.title-encaixa-frase {
+    background-color: #F2E49B !important;
+    color: #025940;
+    font-weight: bold;
+    text-align: center !important;
+    border: 1px solid #F2E49B;
+    font-size: 35px !important;
+    text-transform: uppercase;
+}
+
+.title-categoria {
+	background-color: #025940;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 30px;
+	text-transform: uppercase;
+	width: 350px;
+	padding: 1%;
+	box-shadow: 5px 5px 5px #000000c4;
+}
+
+#nivel-um {
+	top: 173px;
+	left: 770px;
+}
+
+#nivel-dois {
+	top: 394px;
+	left: 770px;
+}
+
+#nivel-tres {
+	top: 612px;
+	left: 770px;
+}
+
+.espaco-item {
+    background-color: #333;
+    width: 200px;
+    height: 200px;
+}
+
+.drag-item {
+    padding: 10px;
+    text-align: center;
+    line-height: 20px;
+    cursor: move;
+    border-radius: 10px;
+    margin: 1%;
+    font-weight: bold;
+    background-color: #fee9ce;
+    color: #925655;
+}
+
+.drag-item:hover {
+    background-color: #b5d4ee;
+    color: #925655;
+}
+
+
+.opcoes.col.position-absolute {
+	top: 145px;
+	left: 74px;
+}
+
+.item {
+    background-color: white;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    color: #333;
+    align-content: center;
+    gap: 10px;
+    align-items: center;
+    font-weight: bold;
+    border: 2px dashed #925655;
+    margin: 1%;
+    font-size: 21px;
+	
+}
+
+.item p {
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-size: 21px;
+}
+
+.espaco-item {
+	width: 390px;
+	height: 105px;
+}
+
+.item1 {
+	top: 266px;
+	left: 747px;
+}
+
+.item2 {
+	top: 487px;
+	left: 533px;
+}
+
+.item3 {
+	top: 487px;
+	left: 954px;
+}
+
+.item4 {
+	top: 698px;
+	left: 145px;
+}
+
+.item5 {
+	top: 698px;
+	left: 542px;
+}
+
+.item6 {
+	top: 698px;
+	left: 941px;
+}
+
+.item7 {
+	top: 698px;
+	left: 1341px;
+}
