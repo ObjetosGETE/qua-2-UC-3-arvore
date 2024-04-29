@@ -1,86 +1,118 @@
-document.addEventListener('dragstart', function (event) {
-  if (event.target.classList.contains('drag-item')) {
-    event.target.classList.add('dragging');
-  }
-});
-
-document.addEventListener('dragend', function (event) {
-  const draggingElement = document.querySelector('.dragging');
-  if (draggingElement) {
-    draggingElement.classList.remove('dragging');
-  }
-});
-
-document.addEventListener('dragover', function (event) {
-  event.preventDefault();
-});
-
-document.addEventListener('drop', function (event) {
-  event.preventDefault();
-  const draggedElement = document.querySelector('.dragging');
-  const dropTarget = event.target;
-
-  if (dropTarget.classList.contains('espaco-item')) {
-    if (!dropTarget.innerHTML) {
-      dropTarget.appendChild(draggedElement);
-    } else {
-      dropTarget.appendChild(draggedElement);
-    }
-  }
-
-
-  const allItems = document.querySelectorAll('.drag-item');
-  const allSpaces = document.querySelectorAll('.espaco-item');
-  let completed = true;
-  allSpaces.forEach(space => {
-    if (!space.querySelector('.drag-item')) {
-      completed = false;
-      return;
-    }
-  });
-
-  if (completed) {
-    openPositiveFeedbackModal();
-  }
-});
-
-function openPositiveFeedbackModal() {
-  $('#modalFeedbackPositivo').modal('show');
-}
-
 $(document).ready(function () {
 
-  $(".drag-item").on("dragstart", function (event) {
+  var acertoCount = 0;
+
+  function showNextFolha() {
+    acertoCount++;
+    switch (acertoCount) {
+      case 1:
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.folhas-um').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
+        break;
+      case 2:
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.folhas-dois').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
+        break;
+      case 3:
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.folhas-tres').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
+        break;
+      case 4:
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.folhas-quatro').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
+        break;
+      case 5:
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.frutos').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
+        break;
+    }
+  }
+
+
+  function adicionarRemoverTexto(tempo) {
+
+    $('.texto-body').fadeOut('slow', function () {
+
+      setTimeout(function () {
+        $('.texto-body').fadeIn('slow');
+      }, tempo);
+    });
+  }
+
+
+  $(document).on("dragstart", ".drag-item", function (event) {
     $(this).addClass('dragging');
     event.originalEvent.dataTransfer.setData("text/plain", $(this).data('resp') + '-' + $(this).text());
   });
 
-  $(".drag-item").on("dragend", function (event) {
-    $(this).removeClass('dragging');
+
+  $(document).on("dragend", ".drag-item", function () {
+    $('.dragging').removeClass('dragging');
   });
 
-  $(".espaco-item").on("dragover", function (event) {
+
+  $(document).on("dragover", ".espaco-item", function (event) {
     event.preventDefault();
   });
 
 
-  $(".espaco-item").on("drop", function (event) {
+  $(document).on("drop", ".espaco-item", function (event) {
     event.preventDefault();
-    var parteProdutoData = event.originalEvent.dataTransfer.getData("text/plain").split('-');
-    var parteProduto = parteProdutoData[0].trim();
-    var espacoMercado = $(this).data('resp').trim();
+    var draggedElement = $('.dragging');
+    var dropTarget = $(event.target).closest('.espaco-item');
+    var dataTransfer = event.originalEvent.dataTransfer.getData("text/plain").split('-');
+    var dragItemResponse = dataTransfer[0].trim();
+
+    if (dropTarget.length) {
+      if (dragItemResponse === dropTarget.data('resp').trim()) {
+        dropTarget.append(draggedElement).removeClass('bg-danger');
+        $("#audio-acerto")[0].play();
+        showNextFolha();
+      } else {
+        dropTarget.addClass('bg-danger');
+        $("#audio-errado")[0].play();
+      }
+      draggedElement.removeClass('dragging');
+    }
 
 
-    if (parteProduto === espacoMercado) {
-      $(this).removeClass('bg-danger');
-      $("#audio-acerto")[0].play();
-    } else {
-      $(this).addClass('bg-danger');
-      $(".drag-item").removeClass('dragging');
-      $("#audio-errado")[0].play();
+    var completed = true;
+    $('.espaco-item').each(function () {
+      if (!$(this).find('.drag-item').length) {
+        completed = false;
+        return false;
+      }
+    });
+
+    if (completed) {
+      openPositiveFeedbackModal();
     }
   });
 
+
+  function openPositiveFeedbackModal() {
+    $('#modalFeedbackPositivo').modal('show');
+  }
 
   function escalaProporcao(largura, altura) {
     var larguraScreen = $(window).width();
@@ -125,4 +157,7 @@ $(document).ready(function () {
   $(window).resize(function () {
     resizeBodyConteudo()
   })
+
+
+
 });
