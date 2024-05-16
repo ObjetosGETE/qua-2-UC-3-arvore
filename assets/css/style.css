@@ -130,15 +130,15 @@
 }
 
 .drag-item {
-    padding: 5px;
-    text-align: center;
-    line-height: 33px;
-    cursor: move;
-    border-radius: 10px;
-    margin: 1%;
-    background-color: #fff;
-    color: #006454;
-    font-size: 23px;
+	padding: 5px;
+	text-align: center;
+	line-height: 33px;
+	cursor: move;
+	border-radius: 10px;
+	margin: 1%;
+	background-color: #fff;
+	color: #006454;
+	font-size: 30px;
 }
 
 .drag-item:hover {
@@ -187,13 +187,13 @@
 }
 
 .item2 {
-    top: 487px;
-    left: 533px;
+	top: 487px;
+	left: 574px;
 }
 
 .item3 {
-    top: 487px;
-    left: 954px;
+	top: 487px;
+	left: 975px;
 }
 
 .item4 {
@@ -224,4 +224,38 @@
 .modal-body {
     color: #006454;
     font-size: 16px;
+}
+
+
+/**********************************************************************/
+/***************************** vire o celular *************************/
+/**********************************************************************/
+
+.p-paisagem {
+    color: white;
+    text-align: center;
+}
+
+.img-paisagem {
+    max-width: 70% !important;
+    height: auto;
+    display: block;
+}
+
+@media only screen and (orientation: portrait) {
+    .modo-smart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color:  #006454;
+        z-index: 9999999999999999999;
+    }
 }

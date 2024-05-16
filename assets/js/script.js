@@ -8,7 +8,7 @@ $(document).ready(function () {
       case 1:
         adicionarRemoverTexto(2000);
         setTimeout(function () {
-          $('.folhas-um').removeClass('d-none').addClass('animated').one('animationend', function () {
+          $('.folhas-quatro').removeClass('d-none').addClass('animated').one('animationend', function () {
             $(this).removeClass('animated');
           });
         }, 1000);
@@ -22,20 +22,22 @@ $(document).ready(function () {
         }, 1000);
         break;
       case 3:
-        adicionarRemoverTexto(2000);
-        setTimeout(function () {
-          $('.folhas-tres').removeClass('d-none').addClass('animated').one('animationend', function () {
-            $(this).removeClass('animated');
-          });
-        }, 1000);
+
+      adicionarRemoverTexto(2000);
+      setTimeout(function () {
+        $('.folhas-um').removeClass('d-none').addClass('animated').one('animationend', function () {
+          $(this).removeClass('animated');
+        });
+      }, 1000);
         break;
-      case 4:
-        adicionarRemoverTexto(2000);
-        setTimeout(function () {
-          $('.folhas-quatro').removeClass('d-none').addClass('animated').one('animationend', function () {
-            $(this).removeClass('animated');
-          });
-        }, 1000);
+      case 4:  
+     
+      adicionarRemoverTexto(2000);
+      setTimeout(function () {
+        $('.folhas-tres').removeClass('d-none').addClass('animated').one('animationend', function () {
+          $(this).removeClass('animated');
+        });
+      }, 1000);
         break;
       case 5:
         adicionarRemoverTexto(2000);
@@ -105,12 +107,14 @@ $(document).ready(function () {
     });
 
     if (completed) {
+      
       openPositiveFeedbackModal();
     }
   });
 
 
   function openPositiveFeedbackModal() {
+    $('.info').addClass('d-none');
     $('#modalFeedbackPositivo').modal('show');
   }
 
