@@ -11,7 +11,7 @@
 
 .intro-frases-encaixa {
     background-color: #F2E49B !important;
-    font-size: 23px;
+    font-size: 24px;
     color: #025940;
 }
 
@@ -39,7 +39,7 @@
     font-weight: bold;
     text-align: center;
     border-radius: 20px;
-    font-size: 30px;
+    font-size: 33px;
     text-transform: uppercase;
     width: 350px;
     padding: 1%;
@@ -125,22 +125,16 @@
     left: 770px;
 }
 
-.espaco-item {
-    background-color: #333;
-    width: 200px;
-    height: 200px;
-}
-
 .drag-item {
-	padding: 5px;
-	text-align: center;
-	line-height: 33px;
-	cursor: move;
-	border-radius: 10px;
-	margin: 1%;
-	background-color: #fff;
-	color: #006454;
-	font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    line-height: 33px;
+    cursor: move;
+    border-radius: 10px;
+    margin: 1%;
+    background-color: #fff;
+    color: #006454;
+    font-size: 33px;
 }
 
 .drag-item:hover {
@@ -155,7 +149,7 @@
     padding: 2px;
     border-radius: 20px;
     max-width: 540px;
-  }
+}
 
 .item {
     background-color: white;
@@ -168,7 +162,7 @@
     font-weight: bold;
     border: 2px dashed #925655;
     margin: 1%;
-    font-size: 21px;
+    font-size: 33px;
 }
 
 .item p {
@@ -176,27 +170,27 @@
     width: 100%;
     padding: 0px;
     margin: 0px;
-    font-size: 21px;
+    font-size: 33px;
 }
 
 .espaco-item {
     width: 390px;
-    height: 105px;
+    height: 125px;
 }
 
 .item1 {
-    top: 266px;
+    top: 254px;
     left: 747px;
 }
 
 .item2 {
-	top: 487px;
-	left: 574px;
+    top: 476px;
+    left: 574px;
 }
 
 .item3 {
-	top: 487px;
-	left: 975px;
+    top: 476px;
+    left: 975px;
 }
 
 .item4 {
@@ -226,7 +220,7 @@
 
 .modal-body {
     color: #006454;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -258,7 +252,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color:  #006454;
+        background-color: #006454;
         z-index: 9999999999999999999;
     }
 }
