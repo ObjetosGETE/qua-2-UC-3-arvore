@@ -23,21 +23,21 @@ $(document).ready(function () {
         break;
       case 3:
 
-      adicionarRemoverTexto(2000);
-      setTimeout(function () {
-        $('.folhas-um').removeClass('d-none').addClass('animated').one('animationend', function () {
-          $(this).removeClass('animated');
-        });
-      }, 1000);
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.folhas-um').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
         break;
-      case 4:  
-     
-      adicionarRemoverTexto(2000);
-      setTimeout(function () {
-        $('.folhas-tres').removeClass('d-none').addClass('animated').one('animationend', function () {
-          $(this).removeClass('animated');
-        });
-      }, 1000);
+      case 4:
+
+        adicionarRemoverTexto(2000);
+        setTimeout(function () {
+          $('.folhas-tres').removeClass('d-none').addClass('animated').one('animationend', function () {
+            $(this).removeClass('animated');
+          });
+        }, 1000);
         break;
       case 5:
         adicionarRemoverTexto(2000);
@@ -92,8 +92,12 @@ $(document).ready(function () {
         showNextFolha();
       } else {
         dropTarget.addClass('bg-danger');
+
         $("#audio-errado")[0].play();
       }
+      setTimeout(function () {
+        dropTarget.removeClass('bg-danger');
+      }, 1000);
       draggedElement.removeClass('dragging');
     }
 
@@ -107,7 +111,7 @@ $(document).ready(function () {
     });
 
     if (completed) {
-      
+
       openPositiveFeedbackModal();
     }
   });
